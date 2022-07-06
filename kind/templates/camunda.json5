@@ -1,0 +1,73 @@
+{
+  name: 'Camunda 8',
+  repo: {
+	name: 'camunda',
+	url: 'https://helm.camunda.io'
+  },
+  chart: 'camunda/camunda-platform',
+  parameters: [
+	{
+	  name: 'name',
+	  displayName: 'Name',
+	  type: 'string',
+	  value: 'camunda'
+	}
+  ],
+  valuesTemplate: {
+	global: {
+	  identity: {
+		auth: {
+		  enabled: false
+		}
+	  }
+	},
+	identity: {
+	  enabled: false
+	},
+	tasklist: {
+	  enabled: false
+	},
+	operate: {
+	  enabled: false
+	},
+	optimize: {
+	  enabled: false
+	},
+	zeebe: {
+	  clusterSize: 1,
+	  partitionCount: 1,
+	  replicationFactor: 1,
+	  pvcSize: '10Gi'
+	},
+	'zeebe-gateway': {
+	  replicas: 1
+	},
+	elasticsearch: {
+	  imageTag: '7.17.3',
+	  replicas: 1,
+	  minimumMasterNodes: 1,
+	  clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s',
+	  resources: {
+		requests: {
+		  cpu: '100m',
+		  memory: '512M'
+		},
+		limits: {
+		  cpu: '1000m',
+		  memory: '512M'
+		}
+	  },
+	  volumeClaimTemplate: {
+		accessModes: [
+		  'ReadWriteOnce'
+		],
+		storageClassName: 'standard',
+		resources: {
+		  requests: {
+			storage: '15Gi'
+		  }
+		}
+	  }
+	}
+  }
+}
