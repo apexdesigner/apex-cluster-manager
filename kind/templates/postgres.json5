@@ -1,0 +1,41 @@
+{
+  name: 'Postgres',
+  repo: {
+	name: 'bitnami',
+	url: 'https://charts.bitnami.com/bitnami'
+  },
+  chart: 'bitnami/postgresql',
+  parameters: [
+	{
+	  name: 'name',
+	  displayName: 'Name',
+	  type: 'string',
+	  value: 'postgres'
+	},
+	{
+	  name: 'port',
+	  displayName: 'Port',
+	  readOnly: true,
+	  type: 'number',
+	  value: 'next available'
+	},
+	{
+	  name: 'password',
+	  displayName: 'Password',
+	  readOnly: true,
+	  type: 'string',
+	  outputOnly: true,
+	  value: 'automatically assigned'
+	}
+  ],
+  valuesTemplate: {
+	primary: {
+	  service: {
+		nodePorts: {
+		  postgresql: '${port}'
+		},
+		type: 'NodePort'
+	  }
+	}
+  }
+}
