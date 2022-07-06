@@ -18,7 +18,7 @@
 	  readOnly: true,
 	  type: 'number',
 	  value: 'next available',
-	  valueFrom: 'manifests.Service["${releaseName}-postgresql"].spec.ports[0].nodePort'
+	  valueFrom: 'manifests.Service.${releaseName}-postgresql.spec.ports[0].nodePort'
 	},
 	{
 	  name: 'password',
@@ -27,7 +27,7 @@
 	  type: 'string',
 	  outputOnly: true,
 	  value: 'automatically assigned',
-	  valueFrom: 'manifests.Secret["${releaseName}-postgresql"].data.postgres-password'
+	  valueFrom: 'manifests.Secret.${releaseName}-postgresql.data.postgres-password'
 	}
   ],
   valuesTemplate: {
