@@ -18,7 +18,19 @@
 	  type: 'string'
 	},
 	{
-	  name: 'adminEails',
+	  name: 'environmentVariables',
+	  displayName: 'Environment Variables',
+	  isList: true,
+	  type: 'EnvironmentVariable',
+	  value: [
+		{
+		  name: 'adminEmails',
+		  value: ''
+		}
+	  ]
+	},
+	{
+	  name: 'adminEmails',
 	  displayName: 'Admin Emails (comma-separated)',
 	  type: 'string'
 	},
@@ -43,6 +55,7 @@
 	appUrl: 'http://localhost:${port}',
 	service: {
 	  port: '${port}'
-	}
+	},
+	environmentVariables: '${environmentVariables}'
   }
 }
