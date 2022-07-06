@@ -34,7 +34,8 @@
 	  displayName: 'Port',
 	  readOnly: true,
 	  type: 'number',
-	  value: 'next available'
+	  value: 'next available',
+	  valueFrom: 'manifests.Service.${releaseName}.spec.ports[0].nodePort'
 	}
   ],
   valuesTemplate: {
