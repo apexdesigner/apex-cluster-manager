@@ -1,0 +1,48 @@
+{
+  name: 'App Manager',
+  chart: 'app-manager',
+  parameters: [
+	{
+	  name: 'name',
+	  displayName: 'Name',
+	  type: 'string'
+	},
+	{
+	  name: 'projectId',
+	  displayName: 'Project Id',
+	  type: 'number'
+	},
+	{
+	  name: 'syncApiKey',
+	  displayName: 'Sync Api Key',
+	  type: 'string'
+	},
+	{
+	  name: 'adminEails',
+	  displayName: 'Admin Emails (comma-separated)',
+	  type: 'string'
+	},
+	{
+	  name: 'port',
+	  displayName: 'Port',
+	  readOnly: true,
+	  type: 'number',
+	  value: 'next available'
+	}
+  ],
+  valuesTemplate: {
+	appName: '${name}',
+	projectId: '${projectId}',
+	syncApiKey: '${syncApiKey}',
+	apexDesignerURL: 'https://sit.apexdesigner.io',
+	clientSideApexDesignerURL: 'https://sit.apexdesigner.io',
+	skipSSLRedirect: true,
+	adminEmails: '${adminEails}',
+	apexDesignerAuth0Audience: 'https://apexdesigner.io',
+	apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
+	appUrl: 'http://localhost:${port}',
+	service: {
+	  port: '${port}'
+	}
+  }
+}
