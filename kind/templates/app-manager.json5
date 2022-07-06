@@ -30,11 +30,6 @@
 	  ]
 	},
 	{
-	  name: 'adminEmails',
-	  displayName: 'Admin Emails (comma-separated)',
-	  type: 'string'
-	},
-	{
 	  name: 'port',
 	  displayName: 'Port',
 	  readOnly: true,
