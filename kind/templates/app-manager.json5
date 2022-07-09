@@ -8,6 +8,12 @@
 	  type: 'string'
 	},
 	{
+	  name: 'port',
+	  displayName: 'Port',
+	  readOnly: true,
+	  type: 'Port',
+	},
+	{
 	  name: 'projectId',
 	  displayName: 'Project Id',
 	  type: 'number'
@@ -24,18 +30,10 @@
 	  type: 'EnvironmentVariable',
 	  value: [
 		{
-		  name: 'adminEmails',
+		  name: 'databaseUrl',
 		  value: ''
 		}
 	  ]
-	},
-	{
-	  name: 'port',
-	  displayName: 'Port',
-	  readOnly: true,
-	  type: 'number',
-	  value: 'next available',
-	  valueFrom: 'manifests.Service.${releaseName}.spec.ports[0].nodePort'
 	}
   ],
   valuesTemplate: {
