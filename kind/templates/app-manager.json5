@@ -10,7 +10,6 @@
 	{
 	  name: 'port',
 	  displayName: 'Port',
-	  readOnly: true,
 	  type: 'Port',
 	},
 	{
