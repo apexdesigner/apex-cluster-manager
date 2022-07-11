@@ -8,9 +8,8 @@
   parameters: [
 	{
 	  name: 'name',
-	  displayName: 'Name',
-	  type: 'string',
-	  value: 'camunda'
+	  type: 'Name',
+	  default: 'camunda'
 	}
   ],
   valuesTemplate: {

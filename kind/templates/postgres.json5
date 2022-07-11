@@ -8,22 +8,15 @@
   parameters: [
 	{
 	  name: 'name',
-	  displayName: 'Name',
-	  type: 'string',
-	  value: 'postgres'
+	  type: 'Name',
 	},
 	{
 	  name: 'port',
-	  displayName: 'Port',
 	  type: 'Port',
 	},
 	{
 	  name: 'password',
-	  displayName: 'Password',
-	  readOnly: true,
-	  type: 'string',
-	  outputOnly: true,
-	  value: 'automatically assigned',
+	  type: 'Password',
 	  valueFrom: 'manifests.Secret.${releaseName}-postgresql.data.postgres-password'
 	}
   ],

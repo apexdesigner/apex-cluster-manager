@@ -4,30 +4,26 @@
   parameters: [
 	{
 	  name: 'name',
-	  displayName: 'Name',
-	  type: 'string'
+	  type: 'Name'
 	},
 	{
 	  name: 'port',
-	  displayName: 'Port',
 	  type: 'Port',
 	},
 	{
 	  name: 'projectId',
-	  displayName: 'Project Id',
-	  type: 'number'
+	  type: 'Integer'
 	},
 	{
 	  name: 'syncApiKey',
-	  displayName: 'Sync Api Key',
+	  displayName: 'Sync API Key',
 	  type: 'string'
 	},
 	{
 	  name: 'environmentVariables',
-	  displayName: 'Environment Variables',
 	  isList: true,
 	  type: 'EnvironmentVariable',
-	  value: [
+	  default: [
 		{
 		  name: 'databaseUrl',
 		  value: ''
