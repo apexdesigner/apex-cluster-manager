@@ -9,6 +9,7 @@
 	{
 	  name: 'name',
 	  type: 'Name',
+	  default: 'postgres'
 	},
 	{
 	  name: 'port',
