@@ -15,10 +15,7 @@
 	{
 	  name: 'port',
 	  displayName: 'Port',
-	  readOnly: true,
-	  type: 'number',
-	  value: 'next available',
-	  valueFrom: 'manifests.Service.${releaseName}-postgresql.spec.ports[0].nodePort'
+	  type: 'Port',
 	},
 	{
 	  name: 'password',
