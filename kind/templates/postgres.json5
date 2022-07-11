@@ -9,11 +9,13 @@
 	{
 	  name: 'name',
 	  type: 'Name',
+	  isRequired: true,
 	  default: 'postgres'
 	},
 	{
 	  name: 'port',
 	  type: 'Port',
+	  isRequired: true
 	},
 	{
 	  name: 'password',
