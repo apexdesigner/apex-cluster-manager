@@ -8,11 +8,6 @@
 	  isRequired: true
 	},
 	{
-	  name: 'port',
-	  type: 'Port',
-	  isRequired: true
-	},
-	{
 	  name: 'projectId',
 	  type: 'Integer',
 	  isRequired: true
@@ -20,7 +15,7 @@
 	{
 	  name: 'syncApiKey',
 	  displayName: 'Sync API Key',
-	  type: 'string',
+	  type: 'Password',
 	  isRequired: true
 	},
 	{
@@ -33,6 +28,11 @@
 		  value: ''
 		}
 	  ]
+	},
+	{
+	  name: 'port',
+	  type: 'Port',
+	  isRequired: true
 	}
   ],
   valuesTemplate: {
