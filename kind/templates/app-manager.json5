@@ -4,20 +4,24 @@
   parameters: [
 	{
 	  name: 'name',
-	  type: 'Name'
+	  type: 'Name',
+	  isRequired: true
 	},
 	{
 	  name: 'port',
 	  type: 'Port',
+	  isRequired: true
 	},
 	{
 	  name: 'projectId',
-	  type: 'Integer'
+	  type: 'Integer',
+	  isRequired: true
 	},
 	{
 	  name: 'syncApiKey',
 	  displayName: 'Sync API Key',
-	  type: 'string'
+	  type: 'string',
+	  isRequired: true
 	},
 	{
 	  name: 'environmentVariables',
