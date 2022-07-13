@@ -50,5 +50,15 @@
 	  nodePort: '${port}'
 	},
 	environmentVariables: '${environmentVariables}'
-  }
+  },
+  launchUrls: [
+	{
+	  label: 'Launch App Manager in a New Tab',
+	  urlTemplate: 'http://localhost:${port}/apexDesigner/status'
+	},
+	{
+	  label: 'Launch App in a New Tab',
+	  urlTemplate: 'http://localhost:${port}'
+	}
+  ]
 }
