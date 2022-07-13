@@ -3,10 +3,12 @@ Coming soon :).
 
 ## Installation
 
-1. Install kubectl
-1. Install helm
-1. Install kind
+1. Install kubectl `brew install kubectl`
+1. Install helm `brew install helm`
+1. Install kind `brew install kind`
 1. Create a kind cluster
+
+        curl -fsSL https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/kind/Cluster.yaml | kind create cluster --config -
 1. Install Apex Cluster Manager
 
         helm install apex-cluster-manager \
