@@ -8,6 +8,13 @@
 	  isRequired: true
 	},
 	{
+	  name: 'apexDesignerUrl',
+	  displayName: 'Apex Designer URL',
+	  default: 'https://apexdesigner.app',
+	  type: 'string',
+	  isRequired: true
+	},
+	{
 	  name: 'projectId',
 	  type: 'Integer',
 	  isRequired: true
@@ -39,8 +46,8 @@
 	appName: '${name}',
 	projectId: '${projectId}',
 	syncApiKey: '${syncApiKey}',
-	apexDesignerURL: 'https://sit.apexdesigner.io',
-	clientSideApexDesignerURL: 'https://sit.apexdesigner.io',
+	apexDesignerURL: '${apexDesignerUrl}',
+	clientSideApexDesignerURL: '${apexDesignerUrl}',
 	skipSSLRedirect: true,
 	adminEmails: '${adminEails}',
 	apexDesignerAuth0Audience: 'https://apexdesigner.io',
