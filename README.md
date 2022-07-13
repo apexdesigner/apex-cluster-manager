@@ -11,6 +11,6 @@ Coming soon :).
 
         helm install apex-cluster-manager \
             https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-cluster-manager-0.0.9.tgz \
-            --create-namespace -n apex-cluster-manager apex-cluster-manager \
+            --create-namespace -n apex-cluster-manager \
             -f https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/kind/apex-cluster-manager.values.yaml \
             --set adminEmails=david.knapp@apexbpm.com
