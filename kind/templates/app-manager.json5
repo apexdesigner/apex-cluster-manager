@@ -10,7 +10,7 @@
 	{
 	  name: 'apexDesignerUrl',
 	  displayName: 'Apex Designer URL',
-	  default: 'https://apexdesigner.app',
+	  default: 'https://app.apexdesigner.io',
 	  type: 'string',
 	  isRequired: true
 	},
