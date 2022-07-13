@@ -1,5 +1,8 @@
 # Apex Cluster Manager
-Coming soon :).
+
+![Apex Cluster Manager Logo](/resources/ad-k8-logo.png)
+
+Manages containerized applications in Kubernetes can feel overwhelming. Apex Cluster Manager makes it easy to manage your containerized apps.
 
 ## Installation
 
