@@ -47,7 +47,7 @@
 	apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
 	appUrl: 'http://localhost:${port}',
 	service: {
-	  port: '${port}'
+	  nodePort: '${port}'
 	},
 	environmentVariables: '${environmentVariables}'
   }
