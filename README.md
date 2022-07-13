@@ -11,6 +11,8 @@ Coming soon :).
         curl -fsSL https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/kind/Cluster.yaml | kind create cluster --config -
 1. Install Apex Cluster Manager
 
+    Be sure to update the adminEmails value to your email address
+
         helm install apex-cluster-manager \
             https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-cluster-manager-0.0.9.tgz \
             --create-namespace -n apex-cluster-manager \
