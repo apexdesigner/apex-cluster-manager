@@ -12,8 +12,8 @@
 	  name: 'camunda',
 	  type: 'App',
 	  templates: [
-		'Camunda',
-		'Camunda Enterprise'
+		'Camunda 8',
+		'Camunda 8 Enterprise'
 	  ],
 	  isRequired: true
 	},
