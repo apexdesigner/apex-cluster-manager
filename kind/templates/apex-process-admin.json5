@@ -1,0 +1,66 @@
+{
+  name: 'Apex Process Admin',
+  chart: 'https://raw.githubusercontent.com/apexdesigner/apex-process-admin/main/helm-charts/apex-process-admin-0.0.5.tgz',
+  parameters: [
+	{
+	  name: 'name',
+	  type: 'Name',
+	  default: 'apex-process-admin',
+	  isRequired: true
+	},
+	{
+	  name: 'camunda',
+	  type: 'App',
+	  templates: [
+		'Camunda',
+		'Camunda Enterprise'
+	  ],
+	  isRequired: true
+	},
+	{
+	  name: 'postgres',
+	  type: 'App',
+	  templates: [
+		'Postgres'
+	  ],
+	  isRequired: true
+	},
+	{
+	  name: 'adminEmails',
+	  type: 'string',
+	  default: '${appUser.email}',
+	  isRequired: true
+	},
+	{
+	  name: 'port',
+	  type: 'Port',
+	  isRequired: true
+	}
+  ],
+  valuesTemplate: {
+	appName: '${name}',
+	projectId: '${projectId}',
+	syncApiKey: '${syncApiKey}',
+	apexDesignerURL: '${apexDesignerUrl}',
+	clientSideApexDesignerURL: '${apexDesignerUrl}',
+	skipSSLRedirect: true,
+	adminEmails: '${adminEails}',
+	apexDesignerAuth0Audience: 'https://apexdesigner.io',
+	apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
+	appUrl: 'http://localhost:${port}',
+	service: {
+	  nodePort: '${port}'
+	},
+	environmentVariables: '${environmentVariables}'
+  },
+  launchUrls: [
+	{
+	  label: 'Launch App Manager in a New Tab',
+	  urlTemplate: 'http://localhost:${port}/apexDesigner/status'
+	},
+	{
+	  label: 'Launch App in a New Tab',
+	  urlTemplate: 'http://localhost:${port}'
+	}
+  ]
+}
