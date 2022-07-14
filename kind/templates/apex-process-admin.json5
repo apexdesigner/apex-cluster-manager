@@ -43,29 +43,17 @@
 	  nodePort: '${port}'
 	},
 	adminEmails: '${adminEmails}',
-	appConfig: [
-	  {
-		name: 'ZEEBE_ADDRESS',
-		value: 'http://${camunda}-zeebe-gateway:26500'
-	  },
-	  {
-		name: 'elasticsearchConfiguration',
-		value: '{ "node": "http://elasticsearch-master-headless:9200" }'
-	  },
-	  {
-		name: 'PGHOST',
-		value: '${postgres}-postgresql'
-	  },
-	  {
-		name: 'PGPASSWORD',
-		valueFrom: {
-		  secretKeyRef: {
-			name: '${postgres}-postgresql',
-			key: 'postgres-password'
-		  }
+	appConfig: {
+	  'ZEEBE_ADDRESS': 'http://${camunda}-zeebe-gateway:26500',
+	  elasticsearchConfiguration: '{ "node": "http://elasticsearch-master-headless:9200" }',
+	  PGHOST: '${postgres}-postgresql',
+	  PGPASSWORD: {
+		secretKeyRef: {
+		  name: '${postgres}-postgresql',
+		  key: 'postgres-password'
 		}
 	  }
-	],
+	},
   },
   launchUrls: [
 	{
