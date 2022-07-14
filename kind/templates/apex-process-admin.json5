@@ -50,7 +50,8 @@
 	  PGPORT: 5432,
 	  PGDATABASE: 'apex-process-admin',
 	  PGUSER: 'postgres',
-	  databaseSSL: false
+	  databaseSSL: false,
+	  zeebeBpmnProcessIdFilter: '*'
 	},
 	environmentVariablesFromSecrets: {
 	  PGPASSWORD: {
