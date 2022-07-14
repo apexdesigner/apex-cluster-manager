@@ -42,6 +42,7 @@
 	service: {
 	  nodePort: '${port}'
 	},
+	adminEmails: '${adminEmails}',
 	appConfig: [
 	  {
 		name: 'ZEEBE_ADDRESS',
@@ -50,10 +51,6 @@
 	  {
 		name: 'elasticsearchConfiguration',
 		value: '{ "node": "http://elasticsearch-master-headless:9200" }'
-	  },
-	  {
-		name: 'adminEmails',
-		value: '${adminEmails}'
 	  },
 	  {
 		name: 'PGHOST',
