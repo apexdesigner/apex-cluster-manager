@@ -54,10 +54,8 @@
 	},
 	environmentVariablesFromSecrets: {
 	  PGPASSWORD: {
-		secretKeyRef: {
-		  name: '${postgres}-postgresql',
-		  key: 'postgres-password'
-		}
+		name: '${postgres}-postgresql',
+		key: 'postgres-password'
 	  }
 	}
   },
