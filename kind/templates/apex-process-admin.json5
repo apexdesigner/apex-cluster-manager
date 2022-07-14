@@ -1,6 +1,6 @@
 {
   name: 'Apex Process Admin',
-  chart: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-process-admin-0.0.5.tgz',
+  chart: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-process-admin-0.0.6.tgz',
   parameters: [
 	{
 	  name: 'name',
@@ -47,6 +47,9 @@
 	  'ZEEBE_ADDRESS': 'http://${camunda}-zeebe-gateway:26500',
 	  elasticsearchConfiguration: '{ "node": "http://elasticsearch-master-headless:9200" }',
 	  PGHOST: '${postgres}-postgresql',
+	  PGPORT:5432,
+	  PGDATABASE: 'apex-process-admin',
+	  PGUSER: 'postgres',
 	  PGPASSWORD: {
 		secretKeyRef: {
 		  name: '${postgres}-postgresql',
