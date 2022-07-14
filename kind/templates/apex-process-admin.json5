@@ -39,27 +39,40 @@
   ],
   valuesTemplate: {
 	appName: '${name}',
-	projectId: '${projectId}',
-	syncApiKey: '${syncApiKey}',
-	apexDesignerURL: '${apexDesignerUrl}',
-	clientSideApexDesignerURL: '${apexDesignerUrl}',
-	skipSSLRedirect: true,
-	adminEmails: '${adminEails}',
-	apexDesignerAuth0Audience: 'https://apexdesigner.io',
-	apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
-	appUrl: 'http://localhost:${port}',
 	service: {
 	  nodePort: '${port}'
 	},
-	environmentVariables: '${environmentVariables}'
+	appConfig: [
+	  {
+		name: 'ZEEBE_ADDRESS',
+		value: 'http://${camunda}-zeebe-gateway:26500'
+	  },
+	  {
+		name: 'elasticsearchConfiguration',
+		value: '{ "node": "http://elasticsearch-master-headless:9200" }'
+	  },
+	  {
+		name: 'adminEmails',
+		value: '${adminEmails}'
+	  },
+	  {
+		name: 'PGHOST',
+		value: '${postgres}-postgresql'
+	  },
+	  {
+		name: 'PGPASSWORD',
+		valueFrom: {
+		  secretKeyRef: {
+			name: '${postgres}-postgresql',
+			key: 'postgres-password'
+		  }
+		}
+	  }
+	],
   },
   launchUrls: [
 	{
-	  label: 'Launch App Manager in a New Tab',
-	  urlTemplate: 'http://localhost:${port}/apexDesigner/status'
-	},
-	{
-	  label: 'Launch App in a New Tab',
+	  label: 'Launch Apex Process Admin in a New Tab',
 	  urlTemplate: 'http://localhost:${port}'
 	}
   ]
