@@ -55,7 +55,8 @@
 		  name: '${postgres}-postgresql',
 		  key: 'postgres-password'
 		}
-	  }
+	  },
+	  databaseSSL: false
 	},
   },
   launchUrls: [
