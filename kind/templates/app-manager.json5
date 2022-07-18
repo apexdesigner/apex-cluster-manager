@@ -1,6 +1,6 @@
 {
   name: 'App Manager',
-  icon: 'apex-designer-icon.png',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/apex-designer-icon.png',
   url: 'https://apexdesigner.io/',
   chart: 'app-manager',
   parameters: [

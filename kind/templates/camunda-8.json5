@@ -1,6 +1,6 @@
 {
   name: 'Camunda 8',
-  icon: 'camunda-icon.png',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/camunda-icon.png',
   url: 'https://camunda.com/',
   repo: {
 	name: 'camunda',

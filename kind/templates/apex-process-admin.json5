@@ -1,5 +1,7 @@
 {
   name: 'Apex Process Admin',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/apex-designer-icon.png',
+  url: 'https://apexdesigner.io/',
   chart: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-process-admin-0.0.7.tgz',
   parameters: [
 	{

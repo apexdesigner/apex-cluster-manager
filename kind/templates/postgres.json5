@@ -1,6 +1,6 @@
 {
   name: 'Postgres',
-  icon: 'postgres-logo.png',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/postgres-logo.png',
   url: 'https://www.postgresql.org/',
   repo: {
 	name: 'bitnami',
