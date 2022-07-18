@@ -1,0 +1,33 @@
+{
+  name: 'Apex Cluster Manager',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/apex-designer-icon.png',
+  url: 'https://apexdesigner.io/',
+  chart: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-cluster-manager-0.0.14.tgz',
+  parameters: [
+	{
+	  name: 'name',
+	  type: 'Name',
+	  default: 'apex-cluster-manager',
+	  isRequired: true
+	},
+	{
+	  name: 'adminEmails',
+	  type: 'string',
+	  default: '${appUser.email}',
+	  isRequired: true
+	},
+	{
+	  name: 'port',
+	  type: 'Port',
+	  isRequired: true,
+	  default: 30000
+	}
+  ],
+  valuesTemplate: {
+	appName: '${name}',
+	service: {
+	  nodePort: '${port}'
+	},
+	adminEmails: '${adminEmails}'
+  }
+}

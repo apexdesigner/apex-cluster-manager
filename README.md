@@ -47,7 +47,7 @@ If you are on Windows or Linux, please see the corresponding instructions on the
     Use helm to install Apex Cluster Manager. Be sure to replace **your.email** with your email address.
 
         helm install apex-cluster-manager \
-            https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-cluster-manager-0.0.10.tgz \
+            https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-cluster-manager-0.0.14.tgz \
             --create-namespace -n apex-cluster-manager \
             -f https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/kind/apex-cluster-manager.values.yaml \
             --set adminEmails=your.email
