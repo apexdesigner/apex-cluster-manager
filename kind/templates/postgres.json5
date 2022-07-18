@@ -1,5 +1,7 @@
 {
   name: 'Postgres',
+  icon: 'postgres-logo.png',
+  url: 'https://www.postgresql.org/',
   repo: {
 	name: 'bitnami',
 	url: 'https://charts.bitnami.com/bitnami'

@@ -1,5 +1,7 @@
 {
   name: 'App Manager',
+  icon: 'apex-designer-icon.png',
+  url: 'https://apexdesigner.io/',
   chart: 'app-manager',
   parameters: [
 	{

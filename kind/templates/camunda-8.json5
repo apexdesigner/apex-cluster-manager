@@ -1,5 +1,7 @@
 {
   name: 'Camunda 8',
+  icon: 'camunda-icon.png',
+  url: 'https://camunda.com/',
   repo: {
 	name: 'camunda',
 	url: 'https://helm.camunda.io'
