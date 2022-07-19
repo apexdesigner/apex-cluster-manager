@@ -47,10 +47,10 @@ If you are on Windows or Linux, please see the corresponding instructions on the
     Use helm to install Apex Cluster Manager. Be sure to replace **your.email** with your email address.
 
         helm install apex-cluster-manager \
-            https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-cluster-manager-0.0.16.tgz \
+            https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-cluster-manager-0.0.17.tgz \
             --create-namespace -n apex-cluster-manager \
             -f https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/kind/apex-cluster-manager.values.yaml \
-            --set adminEmails=your.email
+            --set environmentVariables.adminEmails=your.email
 1. It will take a while to download the image and start the pod.
 You can use this command to watch the status of the pod:
   

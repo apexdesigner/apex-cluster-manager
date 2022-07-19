@@ -1,0 +1,24 @@
+{
+  name: 'Postgres',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/postgres-logo.png',
+  url: 'https://www.postgresql.org/',
+  repo: {
+	name: 'bitnami',
+	url: 'https://charts.bitnami.com/bitnami'
+  },
+  chart: 'bitnami/postgresql',
+  parameters: [
+	{
+	  name: 'name',
+	  type: 'Name',
+	  isRequired: true,
+	  default: 'postgres'
+	},
+	{
+	  name: 'password',
+	  type: 'Password',
+	  valueFrom: 'manifests.Secret.${releaseName}-postgresql.data.postgres-password'
+	}
+  ],
+  valuesTemplate: {}
+}
