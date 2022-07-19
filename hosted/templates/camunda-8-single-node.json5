@@ -44,30 +44,7 @@
 	  replicas: 1
 	},
 	elasticsearch: {
-	  imageTag: '7.17.3',
-	  replicas: 1,
-	  minimumMasterNodes: 1,
-	  clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s',
-	  resources: {
-		requests: {
-		  cpu: '100m',
-		  memory: '512M'
-		},
-		limits: {
-		  cpu: '1000m',
-		  memory: '512M'
-		}
-	  },
-	  volumeClaimTemplate: {
-		accessModes: [
-		  'ReadWriteOnce'
-		],
-		resources: {
-		  requests: {
-			storage: '15Gi'
-		  }
-		}
-	  }
+	  replicas: 1
 	}
   }
 }
