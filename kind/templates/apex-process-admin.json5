@@ -44,8 +44,8 @@
 	service: {
 	  nodePort: '${port}'
 	},
-	adminEmails: '${adminEmails}',
 	environmentVariables: {
+	  adminEmails: '${adminEmails}',
 	  'ZEEBE_ADDRESS': 'http://${camunda}-zeebe-gateway:26500',
 	  elasticsearchConfiguration: '{ "node": "http://elasticsearch-master-headless:9200" }',
 	  PGHOST: '${postgres}-postgresql',
