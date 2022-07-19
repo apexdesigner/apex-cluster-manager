@@ -1,0 +1,49 @@
+{
+  name: 'Camunda 8 - Multi Node',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/camunda-icon.png',
+  url: 'https://camunda.com/',
+  repo: {
+	name: 'camunda',
+	url: 'https://helm.camunda.io'
+  },
+  chart: 'camunda/camunda-platform',
+  parameters: [
+	{
+	  name: 'name',
+	  type: 'Name',
+	  default: 'camunda'
+	}
+  ],
+  valuesTemplate: {
+	global: {
+	  identity: {
+		auth: {
+		  enabled: false
+		}
+	  }
+	},
+	identity: {
+	  enabled: false
+	},
+	tasklist: {
+	  enabled: false
+	},
+	operate: {
+	  enabled: false
+	},
+	optimize: {
+	  enabled: false
+	},
+	zeebe: {
+	  clusterSize: 3,
+	  partitionCount: 3,
+	  replicationFactor: 3,
+	},
+	'zeebe-gateway': {
+	  replicas: 2
+	},
+	elasticsearch: {
+	  replicas: 2
+	}
+  }
+}
