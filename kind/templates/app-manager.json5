@@ -2,7 +2,7 @@
   name: 'App Manager',
   icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/apex-designer-icon.png',
   url: 'https://apexdesigner.io/',
-  chart: 'app-manager',
+  chart: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/app-manager-0.0.17.tgz',
   parameters: [
 	{
 	  name: 'name',
