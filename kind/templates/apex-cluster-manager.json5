@@ -2,7 +2,7 @@
   name: 'Apex Cluster Manager',
   icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/apex-designer-icon.png',
   url: 'https://apexdesigner.io/',
-  chart: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-cluster-manager-0.0.17.tgz',
+  chart: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/apex-cluster-manager-0.0.18.tgz',
   parameters: [
 	{
 	  name: 'name',
