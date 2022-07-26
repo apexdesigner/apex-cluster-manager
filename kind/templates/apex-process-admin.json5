@@ -46,8 +46,8 @@
 	},
 	environmentVariables: {
 	  adminEmails: '${adminEmails}',
-	  'ZEEBE_ADDRESS': 'http://${camunda}-zeebe-gateway:26500',
-	  elasticsearchConfiguration: '{ "node": "http://elasticsearch-master-headless:9200" }',
+	  'ZEEBE_ADDRESS': 'http://${camunda.host}:${camunda.port}',
+	  elasticsearchConfiguration: '{ "node": "http://${elasticsearch.host}:${elasticsearch.port}" }',
 	  PGHOST: '${postgres.host}',
 	  PGPORT: '${postgres.port}',
 	  PGDATABASE: 'apex-process-admin',
