@@ -21,8 +21,8 @@
 	},
 	{
 	  name: 'port',
-	  type: 'Port',
-	  isRequired: true
+	  type: 'integer',
+	  value: 5432
 	},
 	{
 	  name: 'user',
@@ -33,6 +33,10 @@
 	  name: 'password',
 	  type: 'Password',
 	  valueFrom: 'manifests.Secret.${releaseName}-postgresql.data.postgres-password'
+	},
+	{
+	  name: 'exposedPort',
+	  type: 'Port',
 	}
   ],
   valuesTemplate: {
