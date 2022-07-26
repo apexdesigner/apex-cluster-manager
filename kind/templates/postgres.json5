@@ -37,13 +37,14 @@
 	{
 	  name: 'exposedPort',
 	  type: 'Port',
+	  isRequired: true
 	}
   ],
   valuesTemplate: {
 	primary: {
 	  service: {
 		nodePorts: {
-		  postgresql: '${port}'
+		  postgresql: '${exposedPort}'
 		},
 		type: 'NodePort'
 	  }
