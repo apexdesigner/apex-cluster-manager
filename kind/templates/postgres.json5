@@ -15,9 +15,19 @@
 	  default: 'postgres'
 	},
 	{
+	  name: 'host',
+	  type: 'Host',
+	  value: '${postgres}-postgresql'
+	},
+	{
 	  name: 'port',
 	  type: 'Port',
 	  isRequired: true
+	},
+	{
+	  name: 'user',
+	  type: 'User',
+	  value: 'postgresql'
 	},
 	{
 	  name: 'password',
