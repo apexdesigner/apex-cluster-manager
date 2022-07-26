@@ -27,7 +27,7 @@
 	{
 	  name: 'user',
 	  type: 'string',
-	  value: 'postgresql'
+	  value: 'postgres'
 	},
 	{
 	  name: 'password',
