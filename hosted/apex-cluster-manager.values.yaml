@@ -1,17 +1,3 @@
-ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-  tls:
-    - hosts:
-        - apex-cluster-manager.daves-k8-cluster.com
-      secretName: apex-cluster-manager-tls
-  hosts:
-    - host: apex-cluster-manager.daves-k8-cluster.com
-      paths:
-        - path: /
-          pathType: Prefix
 service:
   type: ClusterIP
 environmentVariables:
