@@ -42,6 +42,21 @@
 	  name: 'port',
 	  type: 'Port',
 	  isRequired: true
+	},
+	{
+	  name: 'postgres',
+	  type: 'App',
+	  templates: [
+		'Postgres'
+	  ]
+	},
+	{
+	  name: 'camunda',
+	  type: 'App',
+	  templates: [
+		'Camunda 8',
+		'Camunda 8 Enterprise'
+	  ]
 	}
   ],
   valuesTemplate: {
