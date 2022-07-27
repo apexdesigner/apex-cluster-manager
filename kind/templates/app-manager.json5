@@ -30,9 +30,7 @@
 	{
 	  name: 'additionalEnvironmentVariables',
 	  type: 'JSON5',
-	  default:{
-		adminEmails: '${appUser.email}'
-	  }
+	  default:"{adminEmails: 'you@email.com'}"
 	},
 	{
 	  name: 'port',
