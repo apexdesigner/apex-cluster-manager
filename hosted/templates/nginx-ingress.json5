@@ -1,5 +1,5 @@
 {
-  name: 'Ingress NGINX',
+  name: 'NGINX Ingress',
   icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/NGINX-Docs-horiz-white-type.svg',
   url: 'https://docs.nginx.com/nginx-ingress-controller/',
   repo: {
