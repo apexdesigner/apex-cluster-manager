@@ -1,0 +1,21 @@
+{
+  name: 'Cert Manager',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/cert-manager-logo-icon.svg',
+  url: 'https://cert-manager.io/',
+  repo: {
+	name: 'jetstack',
+	url: 'https://charts.jetstack.io'
+  },
+  chart: 'jetstack/cert-manager',
+  parameters: [
+	{
+	  name: 'name',
+	  type: 'Name',
+	  isRequired: true,
+	  default: 'cert-manager'
+	}
+  ],
+  valuesTemplate: {
+	installCRDs: true
+  }
+}
