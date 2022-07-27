@@ -15,6 +15,21 @@
 	  default: 'postgres'
 	},
 	{
+	  name: 'host',
+	  type: 'string',
+	  value: '${releaseName}-postgresql'
+	},
+	{
+	  name: 'port',
+	  type: 'Integer',
+	  value: 5432
+	},
+	{
+	  name: 'user',
+	  type: 'string',
+	  value: 'postgres'
+	},
+	{
 	  name: 'password',
 	  type: 'Password',
 	  valueFrom: 'manifests.Secret.${releaseName}-postgresql.data.postgres-password'
