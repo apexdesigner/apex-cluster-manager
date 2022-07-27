@@ -28,14 +28,10 @@
 	  isRequired: true
 	},
 	{
-	  name: 'environmentVariables',
+	  name: 'additionalEnvironmentVariables',
 	  isList: true,
 	  type: 'EnvironmentVariable',
 	  default: [
-		{
-		  name: 'databaseUrl',
-		  value: ''
-		}
 	  ]
 	},
 	{
@@ -73,7 +69,7 @@
 	service: {
 	  nodePort: '${port}'
 	},
-	environmentVariables: '${environmentVariables}'
+	environmentVariables: '${additionalEnvironmentVariables}'
   },
   launchUrls: [
 	{
