@@ -29,7 +29,10 @@
 	},
 	{
 	  name: 'additionalEnvironmentVariables',
-	  type: 'JSON5'
+	  type: 'JSON5',
+	  default:{
+		adminEmails: '${appUser.email}'
+	  }
 	},
 	{
 	  name: 'port',
@@ -63,7 +66,6 @@
 	  apexDesignerURL: '${apexDesignerUrl}',
 	  clientSideApexDesignerURL: '${apexDesignerUrl}',
 	  skipSSLRedirect: true,
-	  adminEmails: '${adminEmails}',
 	  apexDesignerAuth0Audience: 'https://apexdesigner.io',
 	  apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
 	  appUrl: 'http://localhost:${port}',
