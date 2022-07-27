@@ -29,10 +29,7 @@
 	},
 	{
 	  name: 'additionalEnvironmentVariables',
-	  isList: true,
-	  type: 'EnvironmentVariable',
-	  default: [
-	  ]
+	  type: 'EnvironmentVariable'
 	},
 	{
 	  name: 'port',
