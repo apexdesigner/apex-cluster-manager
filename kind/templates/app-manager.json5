@@ -29,7 +29,7 @@
 	},
 	{
 	  name: 'additionalEnvironmentVariables',
-	  type: 'EnvironmentVariable'
+	  type: 'JSON5'
 	},
 	{
 	  name: 'port',
