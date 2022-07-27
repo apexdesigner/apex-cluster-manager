@@ -1,0 +1,19 @@
+{
+  name: 'Ingress NGINX',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/NGINX-Docs-horiz-white-type.svg',
+  url: 'https://docs.nginx.com/nginx-ingress-controller/',
+  repo: {
+	name: 'ingress-nginx',
+	url: 'https://kubernetes.github.io/ingress-nginx'
+  },
+  chart: 'ingress-nginx/ingress-nginx',
+  parameters: [
+	{
+	  name: 'name',
+	  type: 'Name',
+	  isRequired: true,
+	  default: 'ingress-nginx'
+	}
+  ],
+  valuesTemplate: {}
+}
