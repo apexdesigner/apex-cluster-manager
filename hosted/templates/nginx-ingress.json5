@@ -1,6 +1,6 @@
 {
   name: 'NGINX Ingress',
-  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/NGINX-Docs-horiz-white-type.svg',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/NGINX-Ingress-Controller-product-icon.svg',
   url: 'https://docs.nginx.com/nginx-ingress-controller/',
   repo: {
 	name: 'ingress-nginx',
