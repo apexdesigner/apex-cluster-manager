@@ -54,15 +54,6 @@
   ],
   valuesTemplate: {
 	appName: '${name}',
-	projectId: '${projectId}',
-	syncApiKey: '${syncApiKey}',
-	apexDesignerURL: '${apexDesignerUrl}',
-	clientSideApexDesignerURL: '${apexDesignerUrl}',
-	skipSSLRedirect: true,
-	adminEmails: '${adminEmails}',
-	apexDesignerAuth0Audience: 'https://apexdesigner.io',
-	apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
-	appUrl: 'http://localhost:${port}',
 	service: {
 	  nodePort: '${port}'
 	},
@@ -76,6 +67,26 @@
 	  apexDesignerAuth0Audience: 'https://apexdesigner.io',
 	  apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
 	  appUrl: 'http://localhost:${port}',
+	  $includeIf: [
+		{
+		  expression: 'camunda',
+		  values: {
+			'ZEEBE_ADDRESS': 'http://${camunda.zeebeHost}:${camunda.zeebePort}',
+			elasticsearchConfiguration: '{ "node": "http://${camunda.elasticsearchHost}:${camunda.elasticsearchPort}" }'
+		  }
+		},
+		{
+		  expression: 'postgres',
+		  values: {
+			PGHOST: '${postgres.host}',
+			PGPORT: '${postgres.port}',
+			PGDATABASE: '${name}',
+			PGUSER: '${postgres.user}',
+			PGPASSWORD: '${postgres.password}',
+			databaseSSL: false
+		  }
+		},
+	  ],
 	  $keysFrom: '${additionalEnvironmentVariables}'
 	},
   },
