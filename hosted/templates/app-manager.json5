@@ -1,0 +1,128 @@
+{
+  name: 'App Manager',
+  icon: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/resources/apex-designer-icon.png',
+  url: 'https://apexdesigner.io/',
+  chart: 'https://raw.githubusercontent.com/apexdesigner/apex-cluster-manager/main/helm-charts/app-manager-0.0.18.tgz',
+  parameters: [
+	{
+	  name: 'name',
+	  type: 'Name',
+	  isRequired: true
+	},
+	{
+	  name: 'apexDesignerUrl',
+	  displayName: 'Apex Designer URL',
+	  default: 'https://app.apexdesigner.io',
+	  type: 'string',
+	  isRequired: true
+	},
+	{
+	  name: 'projectId',
+	  type: 'Integer',
+	  isRequired: true
+	},
+	{
+	  name: 'syncApiKey',
+	  displayName: 'Sync API Key',
+	  type: 'Password',
+	  isRequired: true
+	},
+	{
+	  name: 'additionalEnvironmentVariables',
+	  type: 'JSON5',
+	  default:"{adminEmails: 'you@email.com'}"
+	},
+	{
+	  name: 'hostname',
+	  type: 'string',
+	  isRequired: true
+	},
+	{
+	  name: 'secretName',
+	  type: 'string',
+	  isRequired: true
+	},
+	{
+	  name: 'postgres',
+	  type: 'App',
+	  templates: [
+		'Postgres'
+	  ]
+	},
+	{
+	  name: 'camunda',
+	  type: 'App',
+	  templates: [
+		'Camunda 8',
+		'Camunda 8 Enterprise'
+	  ]
+	}
+  ],
+  valuesTemplate: {
+	appName: '${name}',
+	ingress: {
+	  enabled: true,
+	  tls: {
+		hosts: [
+		  '${hostname}'
+		],
+		secretName: '${secretName}'
+	  },
+	  hosts: [
+		{
+		  host: '${hostname}',
+		  paths: [
+			{
+			  path: '/'
+			}
+		  ]
+		}
+	  ]
+	}
+	},
+	service: {
+	  type: 'ClusterIP'
+	},
+	environmentVariables: {
+	  projectId: '${projectId}',
+	  syncApiKey: '${syncApiKey}',
+	  apexDesignerURL: '${apexDesignerUrl}',
+	  clientSideApexDesignerURL: '${apexDesignerUrl}',
+	  skipSSLRedirect: true,
+	  apexDesignerAuth0Audience: 'https://apexdesigner.io',
+	  apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
+	  appUrl: 'http://localhost:${port}',
+	  $includeIf: [
+		{
+		  expression: 'camunda',
+		  values: {
+			'ZEEBE_ADDRESS': 'http://${camunda.zeebeHost}:${camunda.zeebePort}',
+			elasticsearchConfiguration: '{ "node": "http://${camunda.elasticsearchHost}:${camunda.elasticsearchPort}" }'
+		  }
+		},
+		{
+		  expression: 'postgres',
+		  values: {
+			PGHOST: '${postgres.host}',
+			PGPORT: '${postgres.port}',
+			PGDATABASE: '${name}',
+			PGUSER: '${postgres.user}',
+			PGPASSWORD: '${postgres.password}',
+			databaseSSL: false
+		  }
+		},
+	  ],
+	  $keysFrom: '${additionalEnvironmentVariables}'
+	},
+  },
+  launchUrls: [
+	{
+	  label: 'Launch App Manager in a New Tab',
+	  urlTemplate: 'http://localhost:${port}/apexDesigner/status'
+	},
+	{
+	  label: 'Launch App in a New Tab',
+	  urlTemplate: 'http://localhost:${port}'
+	}
+  ]
+}
