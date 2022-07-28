@@ -30,7 +30,7 @@
 	{
 	  name: 'additionalEnvironmentVariables',
 	  type: 'JSON5',
-	  default:"{adminEmails: 'you@email.com'}"
+	  default: "{adminEmails: 'you@email.com'}"
 	},
 	{
 	  name: 'hostname',
@@ -78,7 +78,6 @@
 		  ]
 		}
 	  ]
-	}
 	},
 	service: {
 	  type: 'ClusterIP'
