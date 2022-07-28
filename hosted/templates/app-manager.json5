@@ -76,15 +76,7 @@
 		  paths: [
 			{
 			  path: '/',
-			  pathType: 'Prefix',
-			  backend: {
-				service: {
-				  name: '${name}',
-				  port: {
-					number: 80
-				  }
-				}
-			  }
+			  pathType: 'Prefix'
 			}
 		  ]
 		}
@@ -92,7 +84,8 @@
 	},
 	service: {
 	  type: 'ClusterIP',
-	  nodePort: null
+	  nodePort: null,
+	  port: 80
 	},
 	environmentVariables: {
 	  projectId: '${projectId}',
