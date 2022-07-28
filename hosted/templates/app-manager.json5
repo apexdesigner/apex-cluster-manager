@@ -53,8 +53,8 @@
 	  name: 'camunda',
 	  type: 'App',
 	  templates: [
-		'Camunda 8',
-		'Camunda 8 Enterprise'
+		'Camunda 8 - Single Node',
+		'Camunda 8 - Multi Node'
 	  ]
 	}
   ],
