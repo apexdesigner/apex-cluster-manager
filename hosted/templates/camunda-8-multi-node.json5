@@ -12,6 +12,26 @@
 	  name: 'name',
 	  type: 'Name',
 	  default: 'camunda'
+	},
+	{
+	  name: 'zeebeHost',
+	  type: 'string',
+	  value: '${releaseName}-zeebe-gateway'
+	},
+	{
+	  name: 'zeebePort',
+	  type: 'Integer',
+	  value: 26500
+	},
+	{
+	  name: 'elasticsearchHost',
+	  type: 'string',
+	  value: 'elasticsearch-master-headless'
+	},
+	{
+	  name: 'elasticsearchPort',
+	  type: 'Integer',
+	  value: 9200
 	}
   ],
   valuesTemplate: {

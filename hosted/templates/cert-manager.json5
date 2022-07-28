@@ -16,6 +16,7 @@
 	}
   ],
   valuesTemplate: {
-	installCRDs: true
+	installCRDs: true,
+	createCustomResource: true
   }
 }

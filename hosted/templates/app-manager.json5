@@ -30,7 +30,7 @@
 	{
 	  name: 'additionalEnvironmentVariables',
 	  type: 'JSON5',
-	  default: "{adminEmails: 'you@email.com'}"
+	  default: "{}"
 	},
 	{
 	  name: 'hostname',
@@ -62,12 +62,14 @@
 	appName: '${name}',
 	ingress: {
 	  enabled: true,
-	  tls: {
-		hosts: [
-		  '${hostname}'
-		],
-		secretName: '${secretName}'
-	  },
+	  tls: [
+		{
+		  hosts: [
+			'${hostname}'
+		  ],
+		  secretName: '${secretName}'
+		}
+	  ],
 	  hosts: [
 		{
 		  host: '${hostname}',
@@ -99,7 +101,7 @@
 	  skipSSLRedirect: true,
 	  apexDesignerAuth0Audience: 'https://apexdesigner.io',
 	  apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
-	  appUrl: 'http://localhost:${port}',
+	  appUrl: 'https://${name}.${hostname}',
 	  $includeIf: [
 		{
 		  expression: 'camunda',
