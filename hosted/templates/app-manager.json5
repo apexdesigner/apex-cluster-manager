@@ -117,11 +117,11 @@
   launchUrls: [
 	{
 	  label: 'Launch App Manager in a New Tab',
-	  urlTemplate: 'http://${host}/apexDesigner/status'
+	  urlTemplate: 'http://${hostname}/apexDesigner/status'
 	},
 	{
 	  label: 'Launch App in a New Tab',
-	  urlTemplate: 'http://${host}'
+	  urlTemplate: 'http://${hostname}'
 	}
   ]
 }
