@@ -38,11 +38,6 @@
 	  isRequired: true
 	},
 	{
-	  name: 'secretName',
-	  type: 'string',
-	  isRequired: true
-	},
-	{
 	  name: 'postgres',
 	  type: 'App',
 	  templates: [
@@ -67,7 +62,7 @@
 		  hosts: [
 			'${hostname}'
 		  ],
-		  secretName: '${secretName}'
+		  secretName: '${name}-tls'
 		}
 	  ],
 	  hosts: [
@@ -95,7 +90,7 @@
 	  skipSSLRedirect: true,
 	  apexDesignerAuth0Audience: 'https://apexdesigner.io',
 	  apexDesignerAuth0Issuer: 'https://login.apexdesigner.io/',
-	  appUrl: 'https://${name}.${hostname}',
+	  appUrl: 'https://${hostname}',
 	  $includeIf: [
 		{
 		  expression: 'camunda',
@@ -122,11 +117,11 @@
   launchUrls: [
 	{
 	  label: 'Launch App Manager in a New Tab',
-	  urlTemplate: 'http://localhost:${port}/apexDesigner/status'
+	  urlTemplate: 'http://${host}/apexDesigner/status'
 	},
 	{
 	  label: 'Launch App in a New Tab',
-	  urlTemplate: 'http://localhost:${port}'
+	  urlTemplate: 'http://${host}'
 	}
   ]
 }
